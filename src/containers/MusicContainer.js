@@ -7,7 +7,8 @@ class MusicContainer extends Component {
     super(props);
     this.state = {
       songs: [],
-      selectedSong: null
+      selectedSong: null,
+      index: 0
     }
 
     this.handleSongSelected = this.handleSongSelected.bind(this);
@@ -23,6 +24,7 @@ class MusicContainer extends Component {
 
   handleSongSelected(index){
   const selectedSong = this.state.songs[index];
+  this.setState({index: index});
   this.setState({selectedSong: selectedSong});
 }
 
@@ -31,7 +33,7 @@ class MusicContainer extends Component {
       <div className="music-container">
       <h2>Hello</h2>
       <MusicSelector songs={this.state.songs} onSongSelected={this.handleSongSelected} />
-      <MusicDetail song={this.state.selectedSong} />
+      <MusicDetail song={this.state.selectedSong} index={this.state.index} />
       </div>
     );
   }
