@@ -11,7 +11,8 @@ const MusicSelector = (props) => {
   }
 
   const songs = props.songs.map((song, index) => {
-    return <li value={index} key={index} onClick={handleClick}>{song.title.label}</li>
+
+    return <li value={index} key={index} onClick={handleClick}>On Number {index + 1}: {song.title.label}</li>
 
   });
 
