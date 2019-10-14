@@ -26,12 +26,13 @@ class MusicContainer extends Component {
   const selectedSong = this.state.songs[index];
   this.setState({index: index});
   this.setState({selectedSong: selectedSong});
-}
+  }
+
+
 
   render(){
     return (
       <div className="music-container">
-      <h2>Hello</h2>
       <MusicSelector songs={this.state.songs} onSongSelected={this.handleSongSelected} />
       <MusicDetail song={this.state.selectedSong} index={this.state.index} />
       </div>
