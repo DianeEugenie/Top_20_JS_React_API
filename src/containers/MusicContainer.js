@@ -8,7 +8,7 @@ class MusicContainer extends Component {
     this.state = {
       songs: [],
       selectedSong: null,
-      index: 0
+      index: null
     }
 
     this.handleSongSelected = this.handleSongSelected.bind(this);
